@@ -1,0 +1,3 @@
+
+HOMEPAGE="http://remmina.sourceforge.net/"
+SRC_URI="mirror://sourceforge/remmina/${P}.tar.gz"
