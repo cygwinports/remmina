@@ -1,9 +1,0 @@
-category: Net
-requires: libavahi-client3 libavahi-common3 libavahi-ui0 libgcrypt11 libglib2.0_0 libgtk2.0_0 libintl8 libssh4 libunique1.0_0 libvte9 libX11_6
-sdesc: "GTK+ remote desktop client (SSH/SFTP protocols)"
-ldesc: "Remmina is a remote desktop client written in GTK+, aiming to be 
-useful for system administrators and travellers, who need to work with 
-lots of remote computers in front of either large monitors or tiny 
-netbooks. Remmina supports multiple network protocols in an integrated 
-and consistant user interface. Currently RDP, VNC, NX, XDMCP and SSH are 
-supported."

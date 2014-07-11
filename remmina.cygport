@@ -1,0 +1,12 @@
+NAME="remmina"
+VERSION=0.9.3
+RELEASE=1
+CATEGORY="Net"
+SUMMARY="GTK+ remote desktop client (SSH/SFTP protocols)"
+DESCRIPTION="Remmina is a remote desktop client written in GTK+, aiming to be
+useful for system administrators and travellers, who need to work with lots of
+remote computers in front of either large monitors or tiny netbooks. Remmina
+supports multiple network protocols in an integrated and consistant user
+interface. Currently RDP, VNC, NX, XDMCP and SSH are supported."
+HOMEPAGE="http://remmina.sourceforge.net/"
+SRC_URI="mirror://sourceforge/remmina/${NAME}-${VERSION}.tar.gz"
