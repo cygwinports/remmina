@@ -1,0 +1,11 @@
+--- origsrc/Remmina-1.0.0/CMakeLists.txt	2014-07-11 00:34:49.669009600 -0500
++++ src/Remmina-1.0.0/CMakeLists.txt	2014-07-11 00:54:25.070766600 -0500
+@@ -48,7 +48,7 @@ endif()
+ 
+ if(CMAKE_COMPILER_IS_GNUCC)
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
++	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CMAKE_C_COMPILE_OPTIONS_PIC}")
+ 	CHECK_C_COMPILER_FLAG(-Wno-unused-result Wno-unused-result)
+ 	if(Wno-unused-result)
+ 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-result")
