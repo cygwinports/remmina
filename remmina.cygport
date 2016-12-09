@@ -2,7 +2,7 @@ inherit cmake
 
 NAME="remmina"
 VERSION=1.0.0
-RELEASE=2
+RELEASE=3
 CATEGORY="Net"
 SUMMARY="GTK+ remote desktop client (SSH/SFTP protocols)"
 DESCRIPTION="Remmina is a remote desktop client written in GTK+, aiming to be
@@ -42,7 +42,7 @@ CFLAGS+=" -DLIBVNCSERVER_WITH_CLIENT_TLS=1"
 # TELEPATHY: fails to compile
 CYGCMAKE_ARGS="
 	-DLIBVNCSERVER_WITH_CLIENT_TLS=1
-	-DWITH_APPINDICATOR=OFF
+	-DWITH_APPINDICATOR=ON
 	-DWITH_AVAHI=ON
 	-DWITH_FREERDP=ON
 	-DWITH_GCRYPT=ON
@@ -59,3 +59,5 @@ remmina_OBSOLETES="remmina-plugins"
 remmina_CONTENTS="etc/ usr/bin/remmina.exe usr/lib/remmina/plugins/*.dll usr/share/"
 remmina_devel_CONTENTS="usr/include/remmina/ usr/lib/lib* usr/lib/pkgconfig/"
 PKG_IGNORE="usr/lib/remmina/plugins/*.a"
+
+DIFF_EXCLUDES="config.h"
