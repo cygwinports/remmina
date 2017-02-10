@@ -1,0 +1,33 @@
+--- origsrc/Remmina-1.2.0-rcgit.17/remmina/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.17/remmina/CMakeLists.txt	2017-02-10 00:47:24.622273500 -0600
+@@ -192,7 +197,7 @@ add_subdirectory(desktop)
+ add_subdirectory(external_tools)
+ add_subdirectory(ui)
+ 
+-install(TARGETS remmina DESTINATION ${CMAKE_INSTALL_BINDIR})
++install(TARGETS remmina RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+ install(DIRECTORY include/remmina/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/remmina FILES_MATCHING PATTERN "*.h")
+ 
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/remmina.pc.in ${CMAKE_CURRENT_BINARY_DIR}/remmina.pc @ONLY)
+--- origsrc/Remmina-1.2.0-rcgit.17/remmina-plugins/nx/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.17/remmina-plugins/nx/CMakeLists.txt	2017-02-09 23:43:09.515018400 -0600
+@@ -40,7 +40,7 @@ set(REMMINA_PLUGIN_NX_SRCS
+ 	nx_plugin.h
+ 	)
+ 
+-add_library(remmina-plugin-nx ${REMMINA_PLUGIN_NX_SRCS})
++add_library(remmina-plugin-nx MODULE ${REMMINA_PLUGIN_NX_SRCS})
+ set_target_properties(remmina-plugin-nx PROPERTIES PREFIX "")
+ set_target_properties(remmina-plugin-nx PROPERTIES NO_SONAME 1)
+ 
+--- origsrc/Remmina-1.2.0-rcgit.17/remmina-plugins/spice/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.17/remmina-plugins/spice/CMakeLists.txt	2017-02-09 23:43:20.165271000 -0600
+@@ -36,7 +36,7 @@ set(REMMINA_PLUGIN_SPICE_SRCS
+ 	spice_plugin_usb.c
+ 	)
+ 
+-add_library(remmina-plugin-spice ${REMMINA_PLUGIN_SPICE_SRCS})
++add_library(remmina-plugin-spice MODULE ${REMMINA_PLUGIN_SPICE_SRCS})
+ set_target_properties(remmina-plugin-spice PROPERTIES PREFIX "")
+ set_target_properties(remmina-plugin-spice PROPERTIES NO_SONAME 1)
+ 

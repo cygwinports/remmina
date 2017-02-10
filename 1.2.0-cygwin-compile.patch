@@ -1,0 +1,21 @@
+--- origsrc/Remmina-1.2.0-rcgit.17/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.17/CMakeLists.txt	2017-02-09 23:30:33.590766000 -0600
+@@ -59,7 +59,7 @@ endif()
+ 
+ if(CMAKE_COMPILER_IS_GNUCC)
+         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
++        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CMAKE_C_COMPILE_OPTIONS_PIC}")
+         if(WITH_GCC_SANITIZE_ADDRESS)
+                 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address")
+         endif()
+--- origsrc/Remmina-1.2.0-rcgit.17/remmina-plugins/rdp/rdp_event.c	2016-11-26 01:43:57.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.17/remmina-plugins/rdp/rdp_event.c	2017-02-09 23:37:48.977613200 -0600
+@@ -42,7 +42,6 @@
+ #include <cairo/cairo-xlib.h>
+ #include <freerdp/locale/keyboard.h>
+ #include <X11/XKBlib.h>
+-#include <execinfo.h>
+ 
+ static void remmina_rdp_event_on_focus_in(GtkWidget* widget, GdkEventKey* event, RemminaProtocolWidget* gp)
+ {

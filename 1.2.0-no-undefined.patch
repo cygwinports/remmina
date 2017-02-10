@@ -1,0 +1,25 @@
+--- origsrc/Remmina-1.2.0-rcgit.17/remmina/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.17/remmina/CMakeLists.txt	2017-02-09 23:39:03.013603200 -0600
+@@ -120,6 +120,11 @@ endif(WITH_MANPAGES)
+ find_package(X11)
+ include_directories(${X11_INCLUDE_DIR})
+ target_link_libraries(remmina ${X11_LIBRARIES})
++set_target_properties(remmina PROPERTIES ENABLE_EXPORTS TRUE)
++
++if(CYGWIN)
++    target_link_libraries(remmina intl)
++endif(CYGWIN)
+ 
+ find_suggested_package(LIBSSH)
+ if(LIBSSH_FOUND)
+--- origsrc/Remmina-1.2.0-rcgit.17/remmina-plugins/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.17/remmina-plugins/CMakeLists.txt	2017-02-09 23:39:41.229607900 -0600
+@@ -43,7 +43,7 @@ set(APPICON16_EMBLEMS_DIR "${REMMINA_DAT
+ set(APPICON22_EMBLEMS_DIR "${REMMINA_DATADIR}/icons/hicolor/22x22/emblems")
+ 
+ set(REMMINA_COMMON_INCLUDE_DIRS ${GTK_INCLUDE_DIRS})
+-set(REMMINA_COMMON_LIBRARIES ${GTK_LIBRARIES} ${PTHREAD_LIBRARY})
++set(REMMINA_COMMON_LIBRARIES ${GTK_LIBRARIES} ${PTHREAD_LIBRARY} intl)
+ 
+ find_suggested_package(LIBSSH)
+ if(LIBSSH_FOUND)
