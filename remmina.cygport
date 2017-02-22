@@ -38,6 +38,7 @@ CYGCMAKE_ARGS="
 
 PKG_NAMES="${NAME} ${NAME}-devel"
 remmina_OBSOLETES="remmina-plugins"
+remmina_REQUIRES="nxproxy"
 remmina_CONTENTS="
 	etc/
 	usr/bin/remmina.exe
