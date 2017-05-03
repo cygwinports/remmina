@@ -2,7 +2,7 @@ inherit cmake
 
 NAME="remmina"
 VERSION=1.2.0
-RELEASE=0.2.rcgit.18
+RELEASE=0.3.rcgit.18
 CATEGORY="Net"
 SUMMARY="GTK+ remote desktop client"
 DESCRIPTION="Remmina is a remote desktop client written in GTK+, aiming to be
