@@ -2,7 +2,7 @@ inherit cmake
 
 NAME="remmina"
 VERSION=1.2.0
-RELEASE=0.4.rcgit.18
+RELEASE=0.5.rcgit.19
 CATEGORY="Net"
 SUMMARY="GTK+ remote desktop client"
 DESCRIPTION="Remmina is a remote desktop client written in GTK+, aiming to be
@@ -18,7 +18,6 @@ PATCH_URI="
 	1.2.0-cmake-install.patch
 	1.2.0-cygwin-compile.patch
 	1.2.0-no-undefined.patch
-	1.2.0-freerdp2.patch
 "
 
 # SURVEY: requires webkit2gtk
