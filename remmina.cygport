@@ -2,7 +2,7 @@ inherit cmake
 
 NAME="remmina"
 VERSION=1.2.0
-RELEASE=0.6.rcgit.20
+RELEASE=0.7.rcgit.27
 CATEGORY="Net"
 SUMMARY="GTK+ remote desktop client"
 DESCRIPTION="Remmina is a remote desktop client written in GTK+, aiming to be
@@ -21,7 +21,6 @@ PATCH_URI="
 "
 
 # SURVEY: requires webkit2gtk
-# TELEPATHY: fails to compile
 CYGCMAKE_ARGS="
 	-DWITH_APPINDICATOR=ON
 	-DWITH_AVAHI=ON
@@ -31,7 +30,7 @@ CYGCMAKE_ARGS="
 	-DWITH_LIBSSH=ON
 	-DWITH_SPICE=ON
 	-DWITH_SURVEY=OFF
-	-DWITH_TELEPATHY=OFF
+	-DWITH_TELEPATHY=ON
 	-DWITH_VTE=ON
 	-DWITH_ZLIB=ON
 "
@@ -43,13 +42,17 @@ remmina_CONTENTS="
 	etc/
 	usr/bin/remmina.exe
 	usr/lib/remmina/plugins/
-	usr/share/appdata/remmina.appdata.xml
-	usr/share/applications/remmina.desktop
+	usr/share/applications/org.remmina.Remmina.desktop
+	usr/share/applications/remmina-file.desktop
+	usr/share/dbus-1/services/org.freedesktop.Telepathy.Client.Remmina.service
 	usr/share/doc/${NAME}/
 	usr/share/icons/hicolor/*/*/remmina*
 	usr/share/locale/*/LC_MESSAGES/remmina.mo
 	usr/share/man/man1/remmina.1*
+	usr/share/metainfo/org.remmina.Remmina.appdata.xml
+	usr/share/mime/packages/remmina-mime.xml
 	usr/share/remmina/
+	usr/share/telepathy/clients/Remmina.client
 "
 remmina_devel_REQUIRES=${NAME}
 remmina_devel_CONTENTS="

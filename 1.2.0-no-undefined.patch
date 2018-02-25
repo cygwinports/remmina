@@ -1,9 +1,29 @@
+--- origsrc/Remmina-1.2.0-rcgit.27/cmake/FindTELEPATHY.cmake	2018-02-14 16:33:54.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.27/cmake/FindTELEPATHY.cmake	2018-02-25 16:02:52.433991000 -0600
+@@ -18,7 +18,7 @@
+ # Boston, MA  02110-1301, USA.
+ 
+ find_package(PkgConfig)
+-pkg_check_modules(PC_TELEPATHY telepathy-glib)
++pkg_check_modules(PC_TELEPATHY telepathy-glib dbus-glib-1)
+ set(TELEPATHY_DEFINITIONS ${PC_TELEPATHY_CFLAGS_OTHER})
+ 
+ find_path(TELEPATHY_INCLUDE_DIR NAMES telepathy-glib/telepathy-glib.h
+@@ -31,7 +31,7 @@ include(FindPackageHandleStandardArgs)
+ 
+ find_package_handle_standard_args(TELEPATHY DEFAULT_MSG TELEPATHY_LIBRARY TELEPATHY_INCLUDE_DIR)
+ 
+-set(TELEPATHY_LIBRARIES ${TELEPATHY_LIBRARY})
++set(TELEPATHY_LIBRARIES ${PC_TELEPATHY_LIBRARIES})
+ set(TELEPATHY_INCLUDE_DIRS ${PC_TELEPATHY_INCLUDE_DIRS})
+ 
+ mark_as_advanced(TELEPATHY_INCLUDE_DIR TELEPATHY_LIBRARY)
 --- origsrc/Remmina-1.2.0-rcgit.17/remmina/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
 +++ src/Remmina-1.2.0-rcgit.17/remmina/CMakeLists.txt	2017-02-09 23:39:03.013603200 -0600
-@@ -120,6 +120,11 @@ endif(WITH_MANPAGES)
- find_package(X11)
- include_directories(${X11_INCLUDE_DIR})
+@@ -131,6 +131,11 @@ endif(WITH_MANPAGES)
  target_link_libraries(remmina ${X11_LIBRARIES})
+ 
+ target_link_libraries(remmina ${CMAKE_THREAD_LIBS_INIT})
 +set_target_properties(remmina PROPERTIES ENABLE_EXPORTS TRUE)
 +
 +if(CYGWIN)
@@ -14,12 +34,12 @@
  if(LIBSSH_FOUND)
 --- origsrc/Remmina-1.2.0-rcgit.17/remmina-plugins/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
 +++ src/Remmina-1.2.0-rcgit.17/remmina-plugins/CMakeLists.txt	2017-02-09 23:39:41.229607900 -0600
-@@ -43,7 +43,7 @@ set(APPICON16_EMBLEMS_DIR "${REMMINA_DAT
+@@ -45,7 +45,7 @@ set(APPICON16_EMBLEMS_DIR "${REMMINA_DAT
  set(APPICON22_EMBLEMS_DIR "${REMMINA_DATADIR}/icons/hicolor/22x22/emblems")
  
  set(REMMINA_COMMON_INCLUDE_DIRS ${GTK_INCLUDE_DIRS})
--set(REMMINA_COMMON_LIBRARIES ${GTK_LIBRARIES} ${PTHREAD_LIBRARY})
-+set(REMMINA_COMMON_LIBRARIES ${GTK_LIBRARIES} ${PTHREAD_LIBRARY} intl)
+-set(REMMINA_COMMON_LIBRARIES ${GTK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
++set(REMMINA_COMMON_LIBRARIES ${GTK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} intl)
  
  find_suggested_package(LIBSSH)
  if(LIBSSH_FOUND)
