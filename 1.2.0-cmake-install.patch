@@ -9,8 +9,8 @@
  install(DIRECTORY include/remmina/
      DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/remmina
      FILES_MATCHING PATTERN "*.h")
---- origsrc/Remmina-1.2.0-rcgit.19/remmina-plugins/nx/CMakeLists.txt	2017-07-24 04:11:37.000000000 -0500
-+++ src/Remmina-1.2.0-rcgit.19/remmina-plugins/nx/CMakeLists.txt	2017-07-26 02:35:01.917451600 -0500
+--- origsrc/Remmina-1.2.0-rcgit.19/plugins/nx/CMakeLists.txt	2017-07-24 04:11:37.000000000 -0500
++++ src/Remmina-1.2.0-rcgit.19/plugins/nx/CMakeLists.txt	2017-07-26 02:35:01.917451600 -0500
 @@ -40,7 +40,7 @@ set(REMMINA_PLUGIN_NX_SRCS
          nx_plugin.h
          )
@@ -20,8 +20,8 @@
  set_target_properties(remmina-plugin-nx PROPERTIES PREFIX "")
  set_target_properties(remmina-plugin-nx PROPERTIES NO_SONAME 1)
  
---- origsrc/Remmina-1.2.0-rcgit.19/remmina-plugins/spice/CMakeLists.txt	2017-07-24 04:11:37.000000000 -0500
-+++ src/Remmina-1.2.0-rcgit.19/remmina-plugins/spice/CMakeLists.txt	2017-07-26 02:35:01.924451100 -0500
+--- origsrc/Remmina-1.2.0-rcgit.19/plugins/spice/CMakeLists.txt	2017-07-24 04:11:37.000000000 -0500
++++ src/Remmina-1.2.0-rcgit.19/plugins/spice/CMakeLists.txt	2017-07-26 02:35:01.924451100 -0500
 @@ -36,7 +36,7 @@ set(REMMINA_PLUGIN_SPICE_SRCS
          spice_plugin_usb.c
          )

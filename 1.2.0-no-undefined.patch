@@ -32,8 +32,8 @@
  
  find_suggested_package(LIBSSH)
  if(LIBSSH_FOUND)
---- origsrc/Remmina-1.2.0-rcgit.17/remmina-plugins/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
-+++ src/Remmina-1.2.0-rcgit.17/remmina-plugins/CMakeLists.txt	2017-02-09 23:39:41.229607900 -0600
+--- origsrc/Remmina-1.2.0-rcgit.17/plugins/CMakeLists.txt	2016-11-26 01:43:57.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.17/plugins/CMakeLists.txt	2017-02-09 23:39:41.229607900 -0600
 @@ -45,7 +45,7 @@ set(APPICON16_EMBLEMS_DIR "${REMMINA_DAT
  set(APPICON22_EMBLEMS_DIR "${REMMINA_DATADIR}/icons/hicolor/22x22/emblems")
  

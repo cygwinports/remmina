@@ -9,8 +9,8 @@
          if(WITH_SSE2)
                  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -msse2")
          endif()
---- origsrc/Remmina-1.2.0-rcgit.27/remmina-plugins/rdp/rdp_event.c	2018-02-14 16:33:54.000000000 -0600
-+++ src/Remmina-1.2.0-rcgit.27/remmina-plugins/rdp/rdp_event.c	2018-02-25 15:46:42.024133300 -0600
+--- origsrc/Remmina-1.2.0-rcgit.27/plugins/rdp/rdp_event.c	2018-02-14 16:33:54.000000000 -0600
++++ src/Remmina-1.2.0-rcgit.27/plugins/rdp/rdp_event.c	2018-02-25 15:46:42.024133300 -0600
 @@ -43,7 +43,6 @@
  #include <gdk/gdkkeysyms.h>
  #include <cairo/cairo-xlib.h>
